@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "791464544788",
+    "project_id": "study-buddy-c8566",
+    "storage_bucket": "study-buddy-c8566.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791464544788:android:5fc760550b3ab08d66f501",
+        "android_client_info": {
+          "package_name": "com.mine.virtualstudy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791464544788-grg5a4hvu72bo1kq349psvqlnru2i6qp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAxuwgyO1c6-MtX_IGsD5QkMWD7DY8vkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791464544788-grg5a4hvu72bo1kq349psvqlnru2i6qp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
