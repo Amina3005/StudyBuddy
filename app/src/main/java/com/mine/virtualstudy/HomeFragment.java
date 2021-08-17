@@ -13,7 +13,6 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding mBinding;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
         mBinding = FragmentHomeBinding.inflate(inflater, container, false);
