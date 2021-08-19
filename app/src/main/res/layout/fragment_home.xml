@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="1dp"
@@ -31,11 +32,32 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <ImageView
+        android:id="@+id/Ivfirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/imggg"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-30dp"
+        android:layout_marginBottom="-60dp"/>
+
     <TextView
+        android:id="@+id/firstTipTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is home fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:text="Guides &amp; Books"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_below="@id/Ivfirst"
+        android:layout_marginLeft="35dp"
+        android:textStyle="bold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Ivfirst"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"/>
 
 </RelativeLayout>
