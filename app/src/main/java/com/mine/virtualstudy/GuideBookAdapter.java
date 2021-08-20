@@ -1,12 +1,15 @@
 package com.mine.virtualstudy;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.mine.virtualstudy.databinding.ItemGuideBinding;
 
@@ -15,11 +18,16 @@ import java.util.List;
 public class GuideBookAdapter extends RecyclerView.Adapter<GuideBookAdapter.ViewHolder>{
 
     private Activity mActivity;
+    private List<Integer> list;
     private RequestManager mGlide;
 
-    public GuideBookAdapter (Activity mActivity, RequestManager mGlide) {
+    public GuideBookAdapter (Activity mActivity) {
         this.mActivity = mActivity;
-        this.mGlide = mGlide;
+    }
+
+    public void setMyList(List<Integer> myList) {
+        this.list = myList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -31,12 +39,13 @@ public class GuideBookAdapter extends RecyclerView.Adapter<GuideBookAdapter.View
 
     @Override
     public void onBindViewHolder(GuideBookAdapter.ViewHolder holder, int position) {
-
+        Integer current = list.get(position);
+        Glide.with(holder.mBinding.cardImage.getContext()).load(current).into(holder.mBinding.cardImage);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
 
