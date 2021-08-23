@@ -1,8 +1,6 @@
 package com.mine.virtualstudy;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -10,19 +8,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestManager;
 import com.mine.virtualstudy.databinding.ItemGuideBinding;
+import com.mine.virtualstudy.databinding.ItemHacksBinding;
 
 import java.util.List;
 
-public class GuideBookAdapter extends RecyclerView.Adapter<GuideBookAdapter.ViewHolder>{
+public class HacksAdapter extends RecyclerView.Adapter<HacksAdapter.ViewHolder> {
 
     private Activity mActivity;
     private List<Integer> list;
 
-    public GuideBookAdapter (Activity mActivity) {
-        this.mActivity = mActivity;
-    }
+    public HacksAdapter (Activity mActivity) { this.mActivity = mActivity; }
+
 
     public void setMyList(List<Integer> myList) {
         this.list = myList;
@@ -30,14 +27,14 @@ public class GuideBookAdapter extends RecyclerView.Adapter<GuideBookAdapter.View
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        ItemGuideBinding binding = ItemGuideBinding.inflate(inflater, parent, false);
+        ItemHacksBinding binding = ItemHacksBinding.inflate(inflater, parent, false);
         return new ViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(GuideBookAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Integer current = list.get(position);
         Glide.with(holder.mBinding.cardImage.getContext()).load(current).into(holder.mBinding.cardImage);
     }
@@ -47,12 +44,11 @@ public class GuideBookAdapter extends RecyclerView.Adapter<GuideBookAdapter.View
         return list.size();
     }
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ItemGuideBinding mBinding;
+        private ItemHacksBinding mBinding;
 
-        public ViewHolder(@NonNull ItemGuideBinding binding) {
+        public ViewHolder(@NonNull ItemHacksBinding binding) {
             super(binding.getRoot());
 
             mBinding = binding;

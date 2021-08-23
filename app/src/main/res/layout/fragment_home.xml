@@ -38,14 +38,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/Ivfirst"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/imggg"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="-30dp"
-            android:layout_marginBottom="-60dp"/>
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
@@ -62,6 +54,7 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         android:layout_below="@id/pagerLl"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="35dp"
         android:textStyle="bold"/>
 
@@ -71,5 +64,24 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/firstTipTv"
         android:orientation="horizontal"/>
+
+    <TextView
+        android:id="@+id/secondTipTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Useful hacks"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/recyclerView"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="20dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hacksRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/secondTipTv"/>
 
 </RelativeLayout>
