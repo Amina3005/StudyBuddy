@@ -1,24 +1,26 @@
 package com.mine.virtualstudy;
 
+
 import android.app.Activity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
-import com.mine.virtualstudy.databinding.ItemHacksBinding;
 import com.mine.virtualstudy.databinding.ItemNewsBinding;
 
 import java.util.List;
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
+public class NewsAdapter extends PagerAdapter {
+
     private Activity mActivity;
     private List<Integer> list;
 
     public NewsAdapter (Activity mActivity) { this.mActivity = mActivity; }
-
 
     public void setMyList(List<Integer> myList) {
         this.list = myList;
@@ -26,31 +28,22 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        ItemNewsBinding binding = ItemNewsBinding.inflate(inflater, parent, false);
-        return new ViewHolder(binding);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Integer current = list.get(position);
-        Glide.with(holder.mBinding.imageView.getContext()).load(current).into(holder.mBinding.imageView);
-    }
-
-    @Override
-    public int getItemCount() {
+    public int getCount() {
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public boolean isViewFromObject(@NonNull  View view, @NonNull Object object) {
+        return view == ((ImageView)object);
+    }
 
-        private ItemNewsBinding mBinding;
-
-        public ViewHolder(@NonNull ItemNewsBinding binding) {
-            super(binding.getRoot());
-
-            mBinding = binding;
-        }
+    @Override
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+        LayoutInflater inflater = LayoutInflater.from(container.getContext());
+        ItemNewsBinding binding = ItemNewsBinding.inflate(inflater, container, false);
+        Integer current = list.get(position);
+        Glide.with(binding.imageView.getContext()).load(current).into(binding.imageView);
+        return current;
     }
 }
+

@@ -23,12 +23,13 @@ public class HomeFragment extends Fragment {
     private HacksAdapter hacksAdapter;
     private NewsAdapter newsAdapter;
     private Activity mActivity;
-
+    private NovAdapter novAdapter;
 
     private List<Integer> list; //books
     private List<Integer> mList; //hacks
     private List<Integer> newsList;
-    private ViewPager viewPager;
+
+    //private ViewPager viewPager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
@@ -44,22 +45,39 @@ public class HomeFragment extends Fragment {
         adapter = new GuideBookAdapter(mActivity);
         hacksAdapter = new HacksAdapter(mActivity);
         newsAdapter = new NewsAdapter(mActivity);
+        novAdapter = new NovAdapter(mActivity);
 
-        initNews();
         initGuideBook();
         initHacks();
-
+        //initNews();
+        initNov();
     }
 
-    public void initNews() {
+    // for news
+    public void initNov() {
         newsList = new ArrayList<>();
         newsList.add(R.drawable.imggg);
         newsList.add(R.drawable.news2);
         newsList.add(R.drawable.news3);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity, LinearLayoutManager.HORIZONTAL, false);
-        mBinding.viewPager.setAdapter(newsAdapter);
+        mBinding.newsRecyclerView.setLayoutManager(layoutManager);
+        novAdapter.setMyList(newsList);
+        mBinding.newsRecyclerView.setAdapter(novAdapter);
+        novAdapter.notifyDataSetChanged();
     }
+
+//    public void initNews() {
+//        newsList = new ArrayList<>();
+//        newsList.add(R.drawable.imggg);
+//        newsList.add(R.drawable.news2);
+//        newsList.add(R.drawable.news3);
+//
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity, LinearLayoutManager.HORIZONTAL, false);
+//        mBinding.newsRecyclerView.setLayoutManager(layoutManager);
+//        newsAdapter.setMyList(newsList);
+//        mBinding.viewPager.setAdapter(newsAdapter);
+//    }
 
     public void initGuideBook() {
         list = new ArrayList<>();
@@ -90,5 +108,4 @@ public class HomeFragment extends Fragment {
         mBinding.hacksRecyclerView.setAdapter(hacksAdapter);
         hacksAdapter.notifyDataSetChanged();
     }
-
 }

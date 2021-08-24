@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         mBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
 
-        getSupportActionBar().hide();
-
         mFragmentManager = getSupportFragmentManager();
 
         mFragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
