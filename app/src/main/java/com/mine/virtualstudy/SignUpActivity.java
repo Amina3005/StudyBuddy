@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.mine.virtualstudy.databinding.ActivitySignUpBinding;
 
@@ -28,6 +29,8 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(mBinding.getRoot());
 
         mActivity = this;
+
+        mBinding.signUpBtn.setOnClickListener(v -> MainActivity.start(mActivity));
 
     }
 }

@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         if (mFragmentManager != null) {
             if (fragment instanceof HomeFragment) {
                 mFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+            } else if (fragment instanceof DiscoveryFragment) {
+                mFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
             } else if (fragment instanceof ExamsFragment) {
                 mFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
             } else if (fragment instanceof ProfileFragment) {
@@ -61,11 +63,15 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_home:
                     fragment = new HomeFragment();
                     break;
+                case R.id.nav_discovery:
+                    fragment = new DiscoveryFragment();
+                    break;
                 case R.id.nav_exam:
                     fragment = new ExamsFragment();
                     break;
                 case R.id.nav_profile:
                     fragment = new ProfileFragment();
+                    break;
             }
 
             mFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
