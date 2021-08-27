@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -13,6 +12,10 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.mine.virtualstudy.databinding.ActivityMainBinding;
+import com.mine.virtualstudy.fragment.DiscoveryFragment;
+import com.mine.virtualstudy.fragment.ExamsFragment;
+import com.mine.virtualstudy.fragment.HomeFragment;
+import com.mine.virtualstudy.fragment.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
         mBinding.bottomNavigation.setOnItemSelectedListener(navListener);
 
         fragment = mFragmentManager.findFragmentById(R.id.fragment_container);
+
+        intiBottomNav();
+    }
+
+    public void intiBottomNav() {
+
         if (mFragmentManager != null) {
             if (fragment instanceof HomeFragment) {
                 mFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
@@ -66,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_discovery:
                     fragment = new DiscoveryFragment();
                     break;
+                case R.id.nav_add:
+                    AddExamActivity.start(mActivity);
                 case R.id.nav_exam:
                     fragment = new ExamsFragment();
                     break;
@@ -75,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             mFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+
             return true;
 
         }

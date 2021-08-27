@@ -11,6 +11,11 @@
         android:title="Discovery"/>
 
     <item
+        android:id="@+id/nav_add"
+        android:icon="@drawable/ic_addbtn"
+        android:title="Add"/>
+
+    <item
         android:id="@+id/nav_exam"
         android:icon="@drawable/ic_graduation"
         android:title="My exams"/>

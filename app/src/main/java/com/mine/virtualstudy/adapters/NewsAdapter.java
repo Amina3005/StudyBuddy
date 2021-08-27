@@ -1,4 +1,4 @@
-package com.mine.virtualstudy;
+package com.mine.virtualstudy.adapters;
 
 
 import android.app.Activity;

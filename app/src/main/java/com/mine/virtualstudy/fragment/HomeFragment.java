@@ -1,4 +1,4 @@
-package com.mine.virtualstudy;
+package com.mine.virtualstudy.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,9 +8,12 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
+import com.mine.virtualstudy.R;
+import com.mine.virtualstudy.adapters.GuideBookAdapter;
+import com.mine.virtualstudy.adapters.HacksAdapter;
+import com.mine.virtualstudy.adapters.NewsAdapter;
+import com.mine.virtualstudy.adapters.NovAdapter;
 import com.mine.virtualstudy.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;

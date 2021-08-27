@@ -1,11 +1,10 @@
 package com.mine.virtualstudy;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.mine.virtualstudy.databinding.ActivitySignUpBinding;
 

@@ -140,7 +140,6 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/twitter"
-
             android:layout_marginLeft="100dp"/>
 
         <ImageView
@@ -148,7 +147,6 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/facebook"
-
             android:layout_marginLeft="100dp"/>
 
     </LinearLayout>

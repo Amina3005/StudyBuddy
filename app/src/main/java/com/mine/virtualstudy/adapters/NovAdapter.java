@@ -1,4 +1,4 @@
-package com.mine.virtualstudy;
+package com.mine.virtualstudy.adapters;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.mine.virtualstudy.databinding.ItemHacksBinding;
 import com.mine.virtualstudy.databinding.ItemNewsBinding;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.mine.virtualstudy;
+package com.mine.virtualstudy.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
